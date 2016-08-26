@@ -4,22 +4,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PirateBartender</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
-	<h1> Do ye want a drink? </h1>
-	<form id="search-term">
-		<div id="questionsdiv">
+	<div class="container">
+		<div class="jumbotron">
+			<h1> Do ye want a drink? </h1>
+			<form id="search-term">
+				<div id="questionsdiv">
+				</div>
+				<br>
+				<input type="submit" class="btn btn-default" id="submitbutton" value="Submit">
+				<br>
+				<br>
+			</form>
+			<div id="search-results">
+			</div>
 		</div>
-		<br>
-		<input type="submit" id="submitbutton" value="Submit">
-		<br>
-	</form>
-	<div id="search-results">
-
 	</div>
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 
