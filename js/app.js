@@ -1,5 +1,5 @@
 //list of all questions
-var Question = {
+var question = {
     'strong': 'Do ye like yer drinks strong?',
     'salty': 'Do ye like it with a salty tang?',
     'bitter': 'Are ye a lubber who likes it bitter?',
@@ -8,7 +8,7 @@ var Question = {
 };
 
 // all ingredients by category
-var Ingredients = {
+var ingredients = {
     'strong': ['glug of run', 'slug of whiskey', 'splash of gin'],
     'salty': ['olive on a stick', 'salt dusted rim', 'rasher of bacon'],
     'bitter': ['shake of bitters', 'splash of tonic', 'twist of a lemon peel'],
@@ -16,12 +16,10 @@ var Ingredients = {
     'fruity': ['slice of orange', 'dash of cassis', 'cherry on top']
 };
 
-
 // original bartender object
-var Bartender = function(answers) {
+var Bartender = function() {
   this.answers = [];
 };
-
 
 //the bartender makes drinks, so this method makes sense
 Bartender.prototype.makeDrink = function() {
@@ -44,7 +42,7 @@ Bartender.prototype.makeDrink = function() {
         for (i = 0; i < this.answers.length; i++) {
             var randomnumber = Math.floor((Math.random() * 100) + 1) % 3;
             var keyIngredient = this.answers[i];
-            $('#search-results').append("<p> " + Ingredients[keyIngredient][randomnumber] + " </p>");
+            $('#search-results').append("<p> " + ingredients[keyIngredient][randomnumber] + " </p>");
 
         }
     }
@@ -53,11 +51,10 @@ Bartender.prototype.makeDrink = function() {
 // the bartender asks quetsions
 Bartender.prototype.makeQuestions = function(questions) {
     //go through the questions and print them for the user
-    for (item in Question) {
-        $('#questionsdiv').append('<div class="checkbox"><label><input type="checkbox" value="' + item + '"/>'+ Question[item] + '</label></div>');
+    for (var item in question) {
+        $('#questionsdiv').append('<div class="checkbox"><label><input type="checkbox" value="' + item + '"/>'+ question[item] + '</label></div>');
     }
 };
-
 
 //main function
 $(function() {
